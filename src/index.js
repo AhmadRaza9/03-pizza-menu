@@ -47,9 +47,7 @@ const pizzaData = [
     soldOut: false,
   },
 ];
-
 /** Pizzas Data */
-
 function App() {
   return (
     <div>
