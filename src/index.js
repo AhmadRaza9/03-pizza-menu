@@ -31,7 +31,7 @@ const pizzaData = [
     ingredients: "Tomato, mozarella, mushrooms, and onion",
     price: 12,
     photoName: "pizzas/funghi.jpg",
-    soldOut: false,
+    soldOut: true,
   },
   {
     name: "Pizza Salamino",
@@ -90,6 +90,20 @@ function Menu() {
 }
 
 function Pizza(props) {
+  if (props.pizzaObj.soldOut) {
+    return (
+      <li className="pizza">
+        <img src={props.pizzaObj.photoName} alt={props.pizzaObj.name} />
+        <div className="soldOut">Sold Out</div>
+        <div>
+          <h3>{props.pizzaObj.name}</h3>
+          <p>{props.pizzaObj.ingredients}</p>
+          <span>{props.pizzaObj.price}</span>
+        </div>
+      </li>
+    );
+  }
+
   return (
     <li className="pizza">
       <img src={props.pizzaObj.photoName} alt={props.pizzaObj.name} />

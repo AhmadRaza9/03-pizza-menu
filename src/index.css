@@ -114,6 +114,7 @@ body {
 .pizza {
   display: flex;
   gap: 3.2rem;
+  position: relative;
 }
 
 .pizza img {
@@ -196,6 +197,20 @@ body {
   background: #00ff0029;
   padding: 5px;
   border-radius: 3px;
+}
+
+.soldOut {
+  background: #ff4500a3;
+  color: #fff;
+  position: absolute;
+  border-radius: 5px;
+  width: 120px;
+  height: 120px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 400;
 }
 
 /*
