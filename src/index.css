@@ -186,6 +186,18 @@ body {
   background-color: #e9bb24;
 }
 
+.warning {
+  background: #ff000029;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.success {
+  background: #00ff0029;
+  padding: 5px;
+  border-radius: 3px;
+}
+
 /*
 SPACING SYSTEM (px)
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 40 / 48 / 64 / 80 / 96 / 128

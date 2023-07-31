@@ -70,18 +70,20 @@ function Header() {
 }
 
 function Menu() {
-  // const pizzas = pizzaData;
-  const pizzas = [];
+  const pizzas = pizzaData;
+  // const pizzas = [];
   const numPizzas = pizzas.length;
   return (
     <main className="menu">
       <h2>Our Menu</h2>
-      {numPizzas > 0 && (
+      {numPizzas > 0 ? (
         <ul className="pizzas">
           {pizzas.map((pizza) => (
             <Pizza pizzaObj={pizza} key={pizza.name} />
           ))}
         </ul>
+      ) : (
+        <p className="warning">There is no pizza ready yet!</p>
       )}
     </main>
   );
@@ -102,21 +104,25 @@ function Pizza(props) {
 
 function Footer() {
   const hour = new Date().getHours();
-  const openHour = 12;
+  const openHour = 20;
   const closeHour = 22; // 22 true, 1 false
   const isOpen = hour >= openHour && hour <= closeHour;
   console.log(isOpen);
 
   return (
     <footer className="footer">
-      <div class="order">
-        {isOpen && (
+      {isOpen ? (
+        <div className="order">
           <p>
             We're open untill {closeHour}:00 . Come visit us or order online
           </p>
-        )}
-        <button className="btn">Order</button>
-      </div>
+          <button className="btn">Order</button>
+        </div>
+      ) : (
+        <p>
+          We're happy to welcome you between {openHour}:00 and {closeHour}:00
+        </p>
+      )}
     </footer>
   );
 }
